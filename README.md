@@ -87,4 +87,4 @@ The codebase relies strictly on robust Object-Oriented Programming (OOP) design 
 * `Expense` & `Income` classes, children of the `Transaction` abstract class.
 * `IncomeCategory` & `ExpenseCategory` interfaces implementing the `Category` interface.
 * The `TransactionActions` interface defines the contract for what operations a user can perform on transactions — essentially the can-do capabilities such as adding, viewing, reporting, or deleting records.
-* `Wallet` class extends `Transaction` and implements the `TransactionActions` interface to implement the user's operations.
+* `Wallet` class implements the `TransactionActions` interface to implement the user's operations.
