@@ -1,6 +1,6 @@
 # 📊 Personal Finance & Expense Tracker CLI
 
-A robust, console-based financial management system written in Java. This application allows users to securely log financial transactions, manage categories using polymorphic enums, track category-specific monthly budgets, and analyze financial reports. All transaction records are automatically saved and loaded across sessions via a text-based database file.
+A robust, console-based financial management system written in Java. This application allows users to securely log financial transactions, manage categories using polymorphic enums, track category-specific monthly budgets, and analyze financial reports. All transaction records are automatically saved and loaded across sessions via a text-based database file. This project was built to reinforce my understanding of Abstract classes and Interfaces after feedback from Jaffa .NET’s technical team.
 
 ---
 
