@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Wallet extends Transaction implements TransactionActions {
+public class Wallet implements TransactionActions {
 private ArrayList<Transaction> ar = new ArrayList<Transaction>();
 Map<ExpenseCategory,Double> map = new HashMap<>();
 private Map<String, Double> budgetMap = new HashMap<>();
@@ -101,10 +101,10 @@ private Map<String, Double> budgetMap = new HashMap<>();
 				// If monthScope is null, treat it as "All-Time"
 
 				if(monthScope == null) {
-					total+=getAmount();
+					total+=tran.getAmount();
 				}
 				else if(tran.getDate().getYear()==monthScope.getYear()&& tran.getDate().getMonth()==monthScope.getMonth()) {
-					total+=getAmount();
+					total+=tran.getAmount();
 				}
 			}
 		}
@@ -120,10 +120,10 @@ private Map<String, Double> budgetMap = new HashMap<>();
 			if(tran instanceof Expense) {
 				// If monthScope is null, treat it as "All-Time"
 				if(monthScope == null) {
-					total+=getAmount();
+					total+=tran.getAmount();
 				}
 			else if(tran.getDate().getYear() == monthScope.getYear() && tran.getDate().getMonth() == monthScope.getMonth()) {
-					total+=getAmount();
+					total+=tran.getAmount();
 				}
 			}
 		}
