@@ -26,5 +26,22 @@ A robust, console-based financial management system written in Java. This applic
    ```bash
    git clone [https://github.com/your-username/expense-tracker.git](https://github.com/your-username/expense-tracker.git)
    cd expense-tracker
+   ```bash
+   javac Main.java Wallet.java Transaction.java Income.java Expense.java
+   ```bash
+   java Main
+# Fast review (Test Scenario)
+* 1. Initialize a Budget
+     Select option 7 (Manage Monthly Budgets), then choose 1 (Set Limit). Provide these sample parameters to restrict your monthly dining options:
+     Category: Food
+     Year / Month: 2026 / 6
+     Limit: 50
+
 # Project Architecture & OOP Design
 The codebase relies strictly on robust Object-Oriented Programming (OOP) design patterns, separation of concerns, and defensive data practices.
+* ** There are two types of transactions either Income or Expense
+* ** Abstract Transaction
+* ** Expense & Income Classes children of Transaction abstract class
+* ** IcomeCategory & ExpenseCategory Interfaces implementing Category Interface
+* **The TransactionActions interface defines the contract for what operations a user can perform on transactions — essentially the can-do capabilities such as adding, viewing, reporting, or deleting records.
+* ** Wallet class extends Transaction and implement TransactionActions Interface to implement the user's operations
