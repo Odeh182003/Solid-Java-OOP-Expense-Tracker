@@ -1,0 +1,1 @@
+574a734a-94b6-4771-9b2a-512bfc032624, Income, 2500.0, 2026-04-12, This is my salary
