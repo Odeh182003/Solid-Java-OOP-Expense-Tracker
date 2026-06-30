@@ -26,3 +26,11 @@ A robust, console-based financial management system written in Java. This applic
    ```bash
    git clone [https://github.com/your-username/expense-tracker.git](https://github.com/your-username/expense-tracker.git)
    cd expense-tracker
+# Project Architecture & OOP Design
+The codebase relies strictly on robust Object-Oriented Programming (OOP) design patterns, separation of concerns, and defensive data practices.
+## Core Architecture Component Breakdown
+Class/Interface,Structural Layer,Key Responsibility
+Main,View / Controller,"Coordinates the menu loop interface, consumes keyboard inputs safely, and acts as the runtime environment."
+Wallet,Service Engine,"Fully implements the TransactionActions interface. Houses the central collections, execution loops, and budget mappings."
+Transaction,Abstract Model,"Abstract polymorphic baseline. Governs shared parameters (UUIDs, amounts, local dates, and memos)."
+Category,Polymorphic Interface,Unifies the IncomeCategory and ExpenseCategory Enums under a single composite data signature.
