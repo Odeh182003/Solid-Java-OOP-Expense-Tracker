@@ -31,12 +31,28 @@ A robust, console-based financial management system written in Java. This applic
    ```bash
    java Main
 # Fast review (Test Scenario)
-* 1. ** Initialize a Budget
+* 1.  Initialize a Budget <br>
      Select option 7 (Manage Monthly Budgets), then choose 1 (Set Limit). Provide these sample parameters to restrict your monthly dining options:
-     Category: Food
-     Year / Month: 2026 / 6
-     Limit: 50
-
+    <ul>
+       <li>Category: Food</li>
+       <li>Year / Month: 2026 / 6</li>
+       <li> Limit: 50</li>
+    </ul> 
+* 2. Record an Expense exceeding the budget<br>
+Select option 1 (Add a Transaction) and choose Expense. Intentionally input a value that breaches your freshly made cap to check the immediate interceptor rules:
+<ul>
+   <li>Amount: 65.50</li>
+  <li>Date: 2026-06-30</li>
+  <li>Category: Food</li>
+</ul><br>
+Expected Outcome: The console will successfully output a unique generated UUID, instantly followed by a high-visibility terminal alert message:<br>
+   WARNING: You have met or exceeded your monthly budget limit for Food!
+   Transaction Recorded! ID: 3eb8bd3a-fa1b-4a85-a630-d76dcfc3e4f9
+* 3. Audit & File Output<br>
+<u>
+   <li>Select option 2 (View All Transactions) to confirm the object has been cleanly loaded inside memory using the system's overwritten toString() layout. </li><li>Select option 8 (Save and Exit). Open the local directory file src/Transaction.txt to verify that your record has been cleanly written to persistent storage.</li>
+</u>
+Note: Reviewer Team dinner
 # Project Architecture & OOP Design
 The codebase relies strictly on robust Object-Oriented Programming (OOP) design patterns, separation of concerns, and defensive data practices.
 * ** There are two types of transactions either Income or Expense
