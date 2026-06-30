@@ -49,15 +49,15 @@ Expected Outcome: The console will successfully output a unique generated UUID, 
    WARNING: You have met or exceeded your monthly budget limit for Food!
    Transaction Recorded! ID: 3eb8bd3a-fa1b-4a85-a630-d76dcfc3e4f9
 * 3. Audit & File Output<br>
-<u>
-   <li>Select option 2 (View All Transactions) to confirm the object has been cleanly loaded inside memory using the system's overwritten toString() layout. </li><li>Select option 8 (Save and Exit). Open the local directory file src/Transaction.txt to verify that your record has been cleanly written to persistent storage.</li>
-</u>
+<ul>
+<li>Select option 2 (View All Transactions) to confirm the object has been cleanly loaded inside memory using the system's overwritten toString() layout. </li><li>Select option 8 (Save and Exit). Open the local directory file src/Transaction.txt to verify that your record has been cleanly written to persistent storage.</li>
+</ul>
 Note: Reviewer Team dinner
 # Project Architecture & OOP Design
 The codebase relies strictly on robust Object-Oriented Programming (OOP) design patterns, separation of concerns, and defensive data practices.
-* ** There are two types of transactions either Income or Expense
-* ** Abstract Transaction
-* ** Expense & Income Classes children of Transaction abstract class
-* ** IcomeCategory & ExpenseCategory Interfaces implementing Category Interface
-* **The TransactionActions interface defines the contract for what operations a user can perform on transactions — essentially the can-do capabilities such as adding, viewing, reporting, or deleting records.
-* ** Wallet class extends Transaction and implement TransactionActions Interface to implement the user's operations
+* There are two types of transactions either Income or Expense
+* Abstract Transaction
+* Expense & Income Classes children of Transaction abstract class
+* IcomeCategory & ExpenseCategory Interfaces implementing Category Interface
+* The TransactionActions interface defines the contract for what operations a user can perform on transactions — essentially the can-do capabilities such as adding, viewing, reporting, or deleting records.
+* Wallet class extends Transaction and implement TransactionActions Interface to implement the user's operations
