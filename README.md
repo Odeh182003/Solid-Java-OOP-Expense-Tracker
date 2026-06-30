@@ -31,7 +31,7 @@ A robust, console-based financial management system written in Java. This applic
    ```bash
    java Main
 # Fast review (Test Scenario)
-* 1. Initialize a Budget
+* 1. ** Initialize a Budget
      Select option 7 (Manage Monthly Budgets), then choose 1 (Set Limit). Provide these sample parameters to restrict your monthly dining options:
      Category: Food
      Year / Month: 2026 / 6
