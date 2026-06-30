@@ -1,6 +1,6 @@
 # 📊 Personal Finance & Expense Tracker CLI
 
-A robust, console-based financial management system written in Java. This application allows users to securely log financial transactions, manage categories using polymorphic enums, track category-specific monthly budgets, and analyze financial reports. All transaction records are automatically saved and loaded across sessions via a text-based database file. This project was built to reinforce my understanding of Abstract classes and Interfaces after feedback from Jaffa .NET’s technical team.
+A robust, console-based financial management system written in Java. This application allows users to securely log financial transactions, manage categories using polymorphic enums, track category-specific monthly budgets, and analyze financial reports. All transaction records are automatically saved and loaded across sessions via a text-based database file. This project was built to reinforce my understanding of Abstract classes and Interfaces after feedback from Jaffa .NET's technical team.
 
 ---
 
@@ -18,46 +18,73 @@ A robust, console-based financial management system written in Java. This applic
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
+
 * **Java Development Kit (JDK) 17** or higher.
 * Terminal/CLI or an Integrated Development Environment (IDE) like IntelliJ IDEA or Eclipse.
 
 ### Quick Run Instructions
+
 1. **Clone the repository:**
+
    ```bash
-   git clone [https://github.com/your-username/expense-tracker.git](https://github.com/your-username/expense-tracker.git)
+   git clone https://github.com/your-username/expense-tracker.git
    cd expense-tracker
+   ```
+
+2. **Compile the source files:**
+
    ```bash
    javac Main.java Wallet.java Transaction.java Income.java Expense.java
+   ```
+
+3. **Run the application:**
+
    ```bash
    java Main
-# Fast review (Test Scenario)
-* 1.  Initialize a Budget <br>
-     Select option 7 (Manage Monthly Budgets), then choose 1 (Set Limit). Provide these sample parameters to restrict your monthly dining options:
-    <ul>
-       <li>Category: Food</li>
-       <li>Year / Month: 2026 / 6</li>
-       <li> Limit: 50</li>
-    </ul> 
-* 2. Record an Expense exceeding the budget<br>
+   ```
+
+---
+
+## ✅ Fast Review (Test Scenario)
+
+1. **Initialize a Budget**
+
+   Select option 7 (Manage Monthly Budgets), then choose 1 (Set Limit). Provide these sample parameters to restrict your monthly dining options:
+
+   * Category: Food
+   * Year / Month: 2026 / 6
+   * Limit: 50
+
+2. **Record an Expense exceeding the budget**
+
    Select option 1 (Add a Transaction) and choose Expense. Intentionally input a value that breaches your freshly made cap to check the immediate interceptor rules:
-   <ul>
-     <li>Amount: 65.50</li>
-     <li>Date: 2026-06-30</li>
-     <li>Category: Food</li>
-     <li>Note: Reviewer Team dinner</li>
-   </ul>
-Expected Outcome: The console will successfully output a unique generated UUID, instantly followed by a high-visibility terminal alert message:<br>
+
+   * Amount: 65.50
+   * Date: 2026-06-30
+   * Category: Food
+   * Note: Reviewer Team dinner
+
+   Expected Outcome: The console will successfully output a unique generated UUID, instantly followed by a high-visibility terminal alert message:
+
+   ```
    WARNING: You have met or exceeded your monthly budget limit for Food!
    Transaction Recorded! ID: 3eb8bd3a-fa1b-4a85-a630-d76dcfc3e4f9
-* 3. View & File Output<br>
-<ul>
-<li>Select option 2 (View All Transactions) to confirm the object has been cleanly loaded inside memory using the system's overwritten toString() layout. </li><li>Select option 8 (Save and Exit). Open the local directory file src/Transaction.txt to verify that your record has been cleanly written to persistent storage.</li>
-</ul>
-# Project Architecture & OOP Design
+   ```
+
+3. **View & File Output**
+
+   * Select option 2 (View All Transactions) to confirm the object has been cleanly loaded inside memory using the system's overwritten `toString()` layout.
+   * Select option 8 (Save and Exit). Open the local directory file `src/Transaction.txt` to verify that your record has been cleanly written to persistent storage.
+
+---
+
+## 🏛️ Project Architecture & OOP Design
+
 The codebase relies strictly on robust Object-Oriented Programming (OOP) design patterns, separation of concerns, and defensive data practices.
-* **There are two types of transactions either Income or Expense
-* **Abstract Transaction
-* **Expense & Income Classes children of Transaction abstract class
-* **IcomeCategory & ExpenseCategory Interfaces implementing Category Interface
-* **The TransactionActions interface defines the contract for what operations a user can perform on transactions — essentially the can-do capabilities such as adding, viewing, reporting, or deleting records.
-* **Wallet class extends Transaction and implement TransactionActions Interface to implement the user's operations
+
+* There are two types of transactions, either Income or Expense.
+* Abstract `Transaction` class.
+* `Expense` & `Income` classes, children of the `Transaction` abstract class.
+* `IncomeCategory` & `ExpenseCategory` interfaces implementing the `Category` interface.
+* The `TransactionActions` interface defines the contract for what operations a user can perform on transactions — essentially the can-do capabilities such as adding, viewing, reporting, or deleting records.
+* `Wallet` class extends `Transaction` and implements the `TransactionActions` interface to implement the user's operations.
